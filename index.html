@@ -33,3 +33,97 @@
         background-color: #000;
     }
 </style>
+
+
+<img
+    id="painel"
+    src="./slide1.png"
+    alt="Painel Operacional"
+>
+
+<script>
+
+    // =====================================================
+    // SLIDES
+    // =====================================================
+
+    const slides = [
+        "./slide1.png",
+        "./slide2.png",
+        "./slide3.png",
+        "./slide4.png",
+        "./slide5.png",
+        "./slide6.png"
+    ];
+
+    let atual = 0;
+
+    const painel = document.getElementById("painel");
+
+
+    // =====================================================
+    // PRÉ-CARREGAR TODAS AS IMAGENS
+    // =====================================================
+
+    const imagens = [];
+
+    slides.forEach(function(caminho) {
+
+        const imagem = new Image();
+
+        imagem.src = caminho;
+
+        imagens.push(imagem);
+
+    });
+
+
+    // =====================================================
+    // TROCAR SLIDE
+    // =====================================================
+
+    function trocarSlide() {
+
+        atual = atual + 1;
+
+        if (atual >= slides.length) {
+            atual = 0;
+        }
+
+        painel.src = slides[atual];
+
+    }
+
+
+    // =====================================================
+    // INICIAR APRESENTAÇÃO
+    // =====================================================
+
+    window.addEventListener("load", function() {
+
+        // Garante que começa no primeiro slide
+        atual = 0;
+
+        painel.src = slides[0];
+
+        // Troca a cada 10 segundos
+        setInterval(trocarSlide, 10000);
+
+    });
+
+
+    // =====================================================
+    // TRATAMENTO DE ERRO
+    // =====================================================
+
+    painel.addEventListener("error", function() {
+
+        console.error(
+            "Não foi possível carregar:",
+            painel.src
+        );
+
+    });
+
+
+</script>
