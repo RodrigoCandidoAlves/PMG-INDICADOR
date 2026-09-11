@@ -1,129 +1,60 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
 <title>Painel Operacional</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
 
     html,
     body {
+
+        margin: 0;
+        padding: 0;
+
         width: 100%;
         height: 100%;
+
         background-color: #000;
+
+        overflow: hidden;
+
     }
 
     body {
-        overflow: hidden;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
     }
 
     #painel {
-        position: fixed;
-        top: 0;
-        left: 0;
 
         width: 100vw;
         height: 100vh;
 
-        display: block;
-
         object-fit: contain;
 
-        background-color: #000;
+        display: block;
+
     }
+
 </style>
 
-
+</head> <body>
 <img
     id="painel"
-    src="./slide1.png"
+    src="./Slide1.png"
     alt="Painel Operacional"
 >
 
-<script>
+</body> </html>
 
-    // =====================================================
-    // SLIDES
-    // =====================================================
-
-    const slides = [
-        "./slide1.png",
-        "./slide2.png",
-        "./slide3.png",
-        "./slide4.png",
-        "./slide5.png",
-        "./slide6.png"
-    ];
-
-    let atual = 0;
-
-    const painel = document.getElementById("painel");
-
-
-    // =====================================================
-    // PRÉ-CARREGAR TODAS AS IMAGENS
-    // =====================================================
-
-    const imagens = [];
-
-    slides.forEach(function(caminho) {
-
-        const imagem = new Image();
-
-        imagem.src = caminho;
-
-        imagens.push(imagem);
-
-    });
-
-
-    // =====================================================
-    // TROCAR SLIDE
-    // =====================================================
-
-    function trocarSlide() {
-
-        atual = atual + 1;
-
-        if (atual >= slides.length) {
-            atual = 0;
-        }
-
-        painel.src = slides[atual];
-
-    }
-
-
-    // =====================================================
-    // INICIAR APRESENTAÇÃO
-    // =====================================================
-
-    window.addEventListener("load", function() {
-
-        // Garante que começa no primeiro slide
-        atual = 0;
-
-        painel.src = slides[0];
-
-        // Troca a cada 10 segundos
-        setInterval(trocarSlide, 10000);
-
-    });
-
-
-    // =====================================================
-    // TRATAMENTO DE ERRO
-    // =====================================================
-
-    painel.addEventListener("error", function() {
-
-        console.error(
-            "Não foi possível carregar:",
-            painel.src
-        );
-
-    });
-
-
-</script>
+</body> </html>
