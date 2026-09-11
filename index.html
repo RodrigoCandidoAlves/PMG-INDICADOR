@@ -31,16 +31,16 @@
 
 <body>
 
-    <img id="slide" src="Slide1.png" alt="Slide">
+    <img id="slide" src="https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide1.png">
 
     <script>
         const slides = [
-            "Slide1.png",
-            "Slide2.PNG",
-            "Slide3.PNG",
-            "Slide4.PNG",
-            "Slide5.PNG",
-            "Slide6.png"
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide1.png",
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide2.PNG",
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide3.PNG",
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide4.PNG",
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide5.PNG",
+            "https://rodrigocandidoalves.github.io/PMG-INDICADOR/Slide6.png"
         ];
 
         let atual = 0;
@@ -55,7 +55,6 @@
             document.getElementById("slide").src = slides[atual];
         }
 
-        // Troca a cada 10 segundos
         setInterval(trocarSlide, 10000);
     </script>
 
